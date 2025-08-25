@@ -6,3 +6,4 @@
 !subdir/
 !scratch-simulator.cc
 !CMakeLists.txt
+!mytcpvother.cc
