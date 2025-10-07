@@ -247,7 +247,7 @@ void CreateUdpFlow(int fromNode, int toNode, int toPort, int bytesPerSec) {
 int
 main(int argc, char* argv[])
 {
-    LogComponentEnable("MyTcpVFixed", LOG_LEVEL_INFO);
+    LogComponentEnable("MyTcpVOther", LOG_LEVEL_INFO);
 
     //
     // Allow the user to override any of the defaults at
