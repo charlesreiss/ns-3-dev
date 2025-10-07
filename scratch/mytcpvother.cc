@@ -22,7 +22,7 @@
           \
            \---n3
 
-    n1 is the source of the MyTcp flow and n2 is the source of the fixed-rate UDP flow
+    n1 is the source of the MyTcp flow and n2 is the source of the other TCP flow
 */
 using namespace ns3;
 
