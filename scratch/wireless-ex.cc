@@ -280,7 +280,7 @@ long RunExperiment()
 
     // The below set of helpers will help us to put together the wifi NICs we want
     WifiHelper wifi;
-    if (verbose)
+    if (enableWifiLogging)
     {
         WifiHelper::EnableLogComponents(); // Turn on all Wifi logging
     }
