@@ -79,6 +79,26 @@ static Scenario scenarios[] = {
             .physicalMode = "DsssRate1Mbps",
             .sendRate = "0.9Mbps",
             .rtsCts = false,
+            .txPower = dBm_u{16},
+            .retryCount = 7,
+            .useTcp = false,
+        },
+        .low = {
+            .physicalMode = "DsssRate1Mbps",
+            .sendRate = "0.9Mbps",
+            .rtsCts = false,
+            .txPower = dBm_u{3},
+            .retryCount = 7,
+            .useTcp = false,
+        },
+    },
+    {
+        .id = 2,
+        .ratio = 1.5,
+        .high = {
+            .physicalMode = "DsssRate1Mbps",
+            .sendRate = "0.9Mbps",
+            .rtsCts = false,
             .txPower = dBm_u{3},
             .retryCount = 7,
             .useTcp = false,
@@ -93,7 +113,7 @@ static Scenario scenarios[] = {
         },
     },
     {
-        .id = 2,
+        .id = 3,
         .ratio = 1.5,
         .high = {
             .physicalMode = "DsssRate1Mbps",
@@ -113,7 +133,7 @@ static Scenario scenarios[] = {
         },
     },
     {
-        .id = 3,
+        .id = 4,
         .ratio = 1.8,
         .high = {
             .physicalMode = "DsssRate1Mbps",
@@ -133,7 +153,7 @@ static Scenario scenarios[] = {
         },
     },
     {
-        .id = 4,
+        .id = 5,
         .ratio = 1.3,
         .high = {
             .physicalMode = "DsssRate1Mbps",
@@ -153,7 +173,7 @@ static Scenario scenarios[] = {
         },
     },
     {
-        .id = 5,
+        .id = 6,
         .ratio = 1.5,
         .high = {
             .physicalMode = "DsssRate1Mbps",
@@ -422,7 +442,7 @@ main(int argc, char* argv[])
     if (listScenarios) {
         ListScenarios();
     } else if (assignmentTestAll) {
-        for (int i = 1; i <= 5; i += 1) {
+        for (int i = 1; i <= 6; i += 1) {
             RunScenarioFromId(i);
         }
     } else if (assignmentTestScenario != 0) {
