@@ -369,11 +369,11 @@ std::string formatPercent(double ratio) {
 
 void RunScenarioFromStruct(Scenario const &scenario) {
     scenarioId = scenario.id;
-    std::cout << "Running scenarioId=" << scenarioId << ", higher rate settings:\n"
+    std::cout << "Running scenarioId=" << scenarioId << ", higher target throughput settings:\n"
         << "  " << scenario.high << std::endl;
     currentSettings = scenario.high;
     double highResult = RunExperiment();
-    std::cout << "Running scenarioId=" << scenarioId << ", lower rate settings:\n"
+    std::cout << "Running scenarioId=" << scenarioId << ", lower target throughput settings:\n"
         << "  " << scenario.low << std::endl;
     currentSettings = scenario.low;
     double lowResult = RunExperiment();
