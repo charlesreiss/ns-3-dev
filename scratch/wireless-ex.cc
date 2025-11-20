@@ -16,6 +16,7 @@
 #include "ns3/log.h"
 #include "ns3/mobility-helper.h"
 #include "ns3/mobility-model.h"
+#include "ns3/neighbor-cache-helper.h"
 #include "ns3/on-off-helper.h"
 #include "ns3/string.h"
 #include "ns3/uinteger.h"
@@ -324,6 +325,10 @@ long RunExperiment()
 
     ipv4.SetBase("10.1.1.0", "255.255.255.0");
     Ipv4InterfaceContainer i = ipv4.Assign(devices);
+
+    NeighborCacheHelper nCache;
+    // populate ARP tables so we don't have to worry about ARP messages being lost
+    nCache.PopulateNeighborCache(i);
 
     Ptr<PacketSink> sink1 = SetupSendRecv(c.Get(0), c.Get(1), Seconds(0.0));
     Ptr<PacketSink> sink2 = SetupSendRecv(c.Get(2), c.Get(3), Seconds(0.0));
